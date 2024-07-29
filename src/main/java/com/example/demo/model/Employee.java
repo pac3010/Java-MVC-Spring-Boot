@@ -1,25 +1,25 @@
 package com.example.demo.model;
 
 public class Employee {
-    private int id;
+    private Integer id;
     private String name;
     private String email;
-    private int dept_head_id;
-    private int dept_id;
+    private Integer deptHeadId;
+    private Integer deptId;
 
-    public Employee(int id, String name, String email, int dept_head_id, int dept_id) {
+    public Employee(Integer id, String name, String email, Integer deptHeadId, Integer deptId) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.dept_head_id = dept_head_id;
-        this.dept_id = dept_id;
+        this.deptHeadId = deptHeadId;
+        this.deptId = deptId;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -39,20 +39,20 @@ public class Employee {
         this.email = email;
     }
 
-    public int getDept_head_id() {
-        return dept_head_id;
+    public Integer getDeptHeadId() {
+        return deptHeadId;
     }
 
-    public void setDept_head_id(int dept_head_id) {
-        this.dept_head_id = dept_head_id;
+    public void setDeptHeadId(Integer deptHeadId) {
+        this.deptHeadId = deptHeadId;
     }
 
-    public int getDept_id() {
-        return dept_id;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setDept_id(int dept_id) {
-        this.dept_id = dept_id;
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
     }
 
     

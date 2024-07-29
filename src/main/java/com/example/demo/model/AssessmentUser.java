@@ -1,32 +1,32 @@
 package com.example.demo.model;
 
 public class AssessmentUser {
-    private int assessment_id;
-    private int user_id;
+    private Integer assessmentId;
+    private Integer userId;
     private String name;
-    private int score;
+    private Integer score;
 
-    public AssessmentUser(int assessment_id, int user_id, String name, int score) {
-        this.assessment_id = assessment_id;
-        this.user_id = user_id;
+    public AssessmentUser(Integer assessmentId, Integer userId, String name, Integer score) {
+        this.assessmentId = assessmentId;
+        this.userId = userId;
         this.name = name;
         this.score = score;
     }
 
-    public int getAssessment_id() {
-        return assessment_id;
+    public Integer getAssessmentId() {
+        return assessmentId;
     }
 
-    public void setAssessment_id(int assessment_id) {
-        this.assessment_id = assessment_id;
+    public void setAssessmentId(Integer assessmentId) {
+        this.assessmentId = assessmentId;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -37,11 +37,11 @@ public class AssessmentUser {
         this.name = name;
     }
 
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 

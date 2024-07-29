@@ -1,14 +1,14 @@
 package com.example.demo.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class Course {
-    private int id;
+    private Integer id;
     private String name;
-    private Date begin;
-    private Date end;
+    private LocalDateTime begin;
+    private LocalDateTime end;
     
-    public Course(int id, String name, Date begin, Date end) {
+    public Course(int id, String name, LocalDateTime begin, LocalDateTime end) {
         this.id = id;
         this.name = name;
         this.begin = begin;
@@ -26,16 +26,16 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }
-    public Date getBegin() {
+    public LocalDateTime getBegin() {
         return begin;
     }
-    public void setBegin(Date begin) {
+    public void setBegin(LocalDateTime begin) {
         this.begin = begin;
     }
-    public Date getEnd() {
+    public LocalDateTime getEnd() {
         return end;
     }
-    public void setEnd(Date end) {
+    public void setEnd(LocalDateTime end) {
         this.end = end;
     }
 

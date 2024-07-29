@@ -1,38 +1,38 @@
 package com.example.demo.model;
 
 public class CourseUserRole {
-    private int user_id;
-    private int course_id;
-    private int role_id;
+    private Integer userId;
+    private Integer courseId;
+    private Integer roleId;
 
-    public CourseUserRole(int user_id, int course_id, int role_id) {
-        this.user_id = user_id;
-        this.course_id = course_id;
-        this.role_id = role_id;
+    public CourseUserRole(Integer userId, Integer courseId, Integer roleId) {
+        this.userId = userId;
+        this.courseId = courseId;
+        this.roleId = roleId;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public int getCourse_id() {
-        return course_id;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(int course_id) {
-        this.course_id = course_id;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 
-    public int getRole_id() {
-        return role_id;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
 }

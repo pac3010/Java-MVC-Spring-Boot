@@ -1,23 +1,23 @@
 package com.example.demo.model;
 
 public class User {
-    private int id;
+    private Integer id;
     private String uname;
     private String pass;
-    private int employee_id;
+    private Integer employeeId;
 
-    public User(int id, String uname, String pass, int employee_id) {
+    public User(Integer id, String uname, String pass, Integer employeeId) {
         this.id = id;
         this.uname = uname;
         this.pass = pass;
-        this.employee_id = employee_id;
+        this.employeeId = employeeId;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,11 +37,11 @@ public class User {
         this.pass = pass;
     }
 
-    public int getEmployee_id() {
-        return employee_id;
+    public Integer getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployee_id(int employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
     }
 }

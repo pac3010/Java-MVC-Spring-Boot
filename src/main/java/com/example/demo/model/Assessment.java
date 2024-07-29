@@ -1,21 +1,21 @@
 package com.example.demo.model;
 
 public class Assessment {
-    private int id;
+    private Integer id;
     private String name;
-    private int course_id;
+    private Integer courseId;
 
-    public Assessment(int id, String name, int course_id) {
+    public Assessment(Integer id, String name, Integer courseId) {
         this.id = id;
         this.name = name;
-        this.course_id = course_id;
+        this.courseId = courseId;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -27,12 +27,12 @@ public class Assessment {
         this.name = name;
     }
 
-    public int getCourse_id() {
-        return course_id;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(int course_id) {
-        this.course_id = course_id;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
     
     
