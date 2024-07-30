@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Department List</title>
+    </head>
+    <body>
+        <a th:href="@{/department/form}">New Department's Data</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</td>
+                    <th>Nama Department</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="department: ${departments}">
+                    <td th:text="${department.id}" > </td>
+                    <td th:text="${department.name}"> </td>
+                    <td><a th:href="@{/department/form/{id}(id=${department.id})}">EDIT</a>  |  <a th:href="@{/department/delete/{id}(id=${department.id})}">DELETE</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

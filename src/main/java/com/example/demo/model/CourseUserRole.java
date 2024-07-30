@@ -1,38 +1,65 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_tr_course_user_role")
 public class CourseUserRole {
-    private Integer userId;
-    private Integer courseId;
-    private Integer roleId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
 
-    public CourseUserRole(Integer userId, Integer courseId, Integer roleId) {
-        this.userId = userId;
-        this.courseId = courseId;
-        this.roleId = roleId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "id")
+    private Course course;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    private Role role;
+
+    public Integer getId() {
+        return id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public User getUser() {
+        return user;
     }
 
-    public Integer getCourseId() {
-        return courseId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public Course getCourse() {
+        return course;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public Role getRole() {
+        return role;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    
 }

@@ -1,19 +1,44 @@
 package com.example.demo.model;
 
-public class Employee {
-    private Integer id;
-    private String name;
-    private String email;
-    private Integer deptHeadId;
-    private Integer deptId;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-    public Employee(Integer id, String name, String email, Integer deptHeadId, Integer deptId) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.deptHeadId = deptHeadId;
-        this.deptId = deptId;
-    }
+import org.springframework.lang.Nullable;
+
+
+@Entity
+@Table(name = "tbl_m_employee")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
+
+    @Column
+    private String name;
+
+    @Column
+    private String email;
+
+    
+    @OneToOne
+    @JoinColumn(name = "dept_head_id", referencedColumnName = "id")
+    @Nullable
+    private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name = "dept_id", referencedColumnName = "id")
+    private Department department;
+
+    @OneToOne(mappedBy = "employee")
+    private User user;
 
     public Integer getId() {
         return id;
@@ -39,21 +64,38 @@ public class Employee {
         this.email = email;
     }
 
-    public Integer getDeptHeadId() {
-        return deptHeadId;
+    public Employee getDeptHeadId() {
+        return employee;
     }
 
-    public void setDeptHeadId(Integer deptHeadId) {
-        this.deptHeadId = deptHeadId;
+    public void setDeptHeadId(Employee employee) {
+        this.employee = employee;
     }
 
-    public Integer getDeptId() {
-        return deptId;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setDeptId(Integer deptId) {
-        this.deptId = deptId;
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", employee=" + employee + ", department="
+                + department + ", user=" + user + "]";
     }
 
     
+    
+
+
 }

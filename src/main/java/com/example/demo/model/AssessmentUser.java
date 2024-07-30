@@ -1,32 +1,58 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_tr_assessment_user")
 public class AssessmentUser {
-    private Integer assessmentId;
-    private Integer userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "assessment_id", referencedColumnName = "id")
+    private Assessment assessment;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
+    @Column
     private String name;
+
+    @Column
     private Integer score;
 
-    public AssessmentUser(Integer assessmentId, Integer userId, String name, Integer score) {
-        this.assessmentId = assessmentId;
-        this.userId = userId;
-        this.name = name;
-        this.score = score;
+    public Integer getId() {
+        return id;
     }
 
-    public Integer getAssessmentId() {
-        return assessmentId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setAssessmentId(Integer assessmentId) {
-        this.assessmentId = assessmentId;
+    public Assessment getAssessment() {
+        return assessment;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public void setAssessment(Assessment assessment) {
+        this.assessment = assessment;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getName() {
@@ -44,6 +70,7 @@ public class AssessmentUser {
     public void setScore(Integer score) {
         this.score = score;
     }
+
 
     
 }

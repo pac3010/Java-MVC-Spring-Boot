@@ -1,14 +1,34 @@
 package com.example.demo.model;
 
-public class Syllabus {
-    private Integer id;
-    private String name;
-    private Integer courseId;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-    public Syllabus(Integer id, String name, Integer courseId) {
+@Entity
+@Table(name = "tbl_m_silabus")
+public class Syllabus {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
+
+    @Column
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "id")
+    private Course course;
+
+    
+    public Syllabus(Integer id, String name, Course course) {
         this.id = id;
         this.name = name;
-        this.courseId = courseId;
+        this.course = course;
     }
 
     public Integer getId() {
@@ -27,12 +47,12 @@ public class Syllabus {
         this.name = name;
     }
 
-    public Integer getCourseId() {
-        return courseId;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     
