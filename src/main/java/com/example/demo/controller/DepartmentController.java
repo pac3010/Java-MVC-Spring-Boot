@@ -35,7 +35,7 @@ public class DepartmentController {
 
     @PostMapping("/save")
     public String save(Department department) {
-        return departmentService.save(department) ? "redirect:/department" : "form";
+        return departmentService.save(department) ? "redirect:/employee" : "form";
     }
     // @GetMapping("/showFormForUpdate/{id}")
     // public String updateForm(@PathVariable(value = "id") long id, Model model) {

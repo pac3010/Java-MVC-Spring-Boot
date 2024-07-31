@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Form Employee</title>
+  </head>
+  <body>
+    <form method="post" th:action="@{/employee/save}" th:object="${employee}">
+      <input type="hidden" th:field="*{id}" />
+      <input th:field="*{name}" name="name" placeholder="Your Name" /><br />
+      <input th:field="*{email}" name="email" placeholder="Your email" /><br />
+      <label for="cars">Choose Your Department:</label>
+
+      <select th:field="*{department}" id="department">
+        <option th:each="department : ${departments}" th:value="${department.id}" th:text="${department.name}"></option>
+    </select>
+    <br>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

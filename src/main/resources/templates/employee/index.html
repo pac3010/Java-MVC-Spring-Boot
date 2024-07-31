@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <a th:href="@{/employee/form}"><h1>Add New Employee's Data</h1></a>
+    <table>
+        <thead>
+            <tr>
+                <td>Employee ID</td>
+                <td>Employee Name</td>
+                <td>Email</td>
+                <td>Department Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee: ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.department != null ? employee.department.name : 'NULL'}"></td>
+                <td><a th:href="@{/employee/form/{id}(id=${employee.id})}">UPDATE</a> | <a th:href="@{/employee/delete/{id}(id=${employee.id})}">DELETE</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
